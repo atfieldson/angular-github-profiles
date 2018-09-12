@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular Basics</title>
+  <script type="text/javascript" src="vendors/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/client.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+</head>
+
+<body>
+  <main ng-app="GithubListApp" ng-controller="GithubUserController as vm">
+    <section class="container">
+      <h1>Github User's Angular List</h1>
+      <h3>Add a new person</h3>
+      <form class="container">
+        <div class="row">
+          <label class="col-md-6" for="firstName">First Name</label>
+          <label class="col-md-6" for="lastName">Last Name</label>
+        </div>
+        <div class="row">
+          <input class="col-md-6" type="text" name="firstName" class="form-control" ng-model="vm.newPerson.firstName" placeholder="First Name" />
+          <input class="col-md-6" type="text" name="lastName" class="form-control" ng-model="vm.newPerson.lastName" placeholder="Last Name" />
+        </div>
+        <div class="row">
+          <label class="col-md-6" for="git_username">Github Username</label>
+          <label class="col-md-6" for="shoutout">Shout Out</label>
+        </div>
+        <div class="row">
+          <input class="col-md-6" type="text" name="git_username" class="form-control" ng-model="vm.newPerson.githubUsername" placeholder="Github Username" />
+          <input class="col-md-6" type="text" name="shoutout" class="form-control" ng-model="vm.newPerson.shoutout" placeholder="Shoutout" />
+        </div>
+          <button ng-click="vm.createPerson()" type="button" class="btn btn-primary">Submit</button>
+       
+        <!-- What other fields do we need to ask for in order to get the information we need? -->
+      </form>
+    </section>
+    <section class="container">
+      <h3>Class List</h3>
+      <ul class="list-group">
+        <label>Find Stuff: <input ng-model="search"></label> <br>
+        <li class="list-group-item" ng-repeat="person in vm.people | filter:search">
+          <!-- What needs to be repeated? -->
+          <!-- TODO: Create a list item for everyone in the array -->
+          <a href="https://github.com/{{person.git_username}}">
+            {{person.firstName}} {{person.lastName}}</a> - {{person.shoutout}}
+            <!-- include the other parameters for the person -->
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

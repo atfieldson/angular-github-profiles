@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PrimeAcademy/angular-github-profiles/issues"
   },
-  "homepage": "https://github.com/PrimeAcademy/angular-github-profiles#readme"
+  "homepage": "https://github.com/PrimeAcademy/angular-github-profiles#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
