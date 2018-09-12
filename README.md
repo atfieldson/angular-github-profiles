@@ -9,3 +9,5 @@ The goal of this assignment is to update the index.html file to add a new person
 - Serve these files from a server to `localhost:5000` with `npm start`
 - Move the array to a mongo database and research `$http` in order to query the data from the database
 
+# angular-github-profiles
+# angular-github-profiles
