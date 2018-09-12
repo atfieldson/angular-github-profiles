@@ -14,8 +14,15 @@
       <h3>Add a new person</h3>
       <form class="col-md-12">
         <div class="form-group col-md-6">
-          <label for="firstName">First Name</label>
+          <label class="col" for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="vm.newPerson.firstName" placeholder="First Name"/>
+          <label for="git_username">Github Username</label>
+          <input type="text" name="git_username" class="form-control" ng-model="vm.newPerson.githubUsername" placeholder="Github Username"/>
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" class="form-control" ng-model="vm.newPerson.lastName" placeholder="First Name"/>
+          <label for="shoutout">Shout Out</label>  
+          <input type="text" name="shoutout" class="form-control" ng-model="vm.newPerson.shoutout" placeholder="Shoutout"/>
+          <button ng-click = "vm.createPerson()" type="button" class="btn btn-primary">Submit</button>
         </div>
         <!-- What other fields do we need to ask for in order to get the information we need? -->
       </form>
@@ -23,9 +30,9 @@
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
+        <li class="list-group-item" ng-repeat="person in vm.people"> <!-- What needs to be repeated? -->
           <!-- TODO: Create a list item for everyone in the array -->
-          {{person.firstName}}<!-- include the other parameters for the person -->
+          {{person.firstName}} {{person.lastName}} - {{person.shoutout}}<!-- include the other parameters for the person -->
         </li>
       </ul>
     </section>
